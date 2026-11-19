@@ -17,9 +17,19 @@
       <div class="brand-mark">S</div><p class="eyebrow">YOUR PERSONAL STUDY COMMAND CENTER</p>
       <h1>Make every study session <span>count.</span></h1>
       <p class="muted">Plan clearly, focus calmly, and let your AI study manager help organise the work.</p>
-      <button id="googleSignIn" class="button primary wide">Continue with Google</button>
-      <p id="authMessage" class="small muted">Sign in to save your plans securely and sync across devices.</p>
-      <p class="tiny muted">By continuing, you agree to use StudyHub respectfully. Your study data is private by default.</p>
+      <form id="authForm" autocomplete="on">
+        <label class="label" for="authUsername">Username</label>
+        <input class="field" id="authUsername" name="username" type="text" minlength="3" maxlength="20" pattern="[A-Za-z0-9_.-]{3,20}" autocomplete="username" placeholder="e.g. alex_2027" required>
+        <label class="label" for="authPassword">Password</label>
+        <input class="field" id="authPassword" name="password" type="password" minlength="8" autocomplete="current-password" placeholder="At least 8 characters" required>
+        <label class="label hidden" id="confirmPasswordLabel" for="confirmPassword">Confirm password</label>
+        <input class="field hidden" id="confirmPassword" type="password" minlength="8" autocomplete="new-password" placeholder="Enter password again">
+        <button id="authSubmit" class="button primary wide" type="submit">Sign in</button>
+      </form>
+      <p class="small muted" style="text-align:center"><span id="authModeText">New to StudyHub?</span> <button id="authModeToggle" class="muted-button" type="button">Create an account</button></p>
+      <p id="authMessage" class="small muted" role="status" aria-live="polite">Use your StudyHub username and password.</p>
+      <p class="tiny muted">Your study data is private by default. Use a unique password that you do not use on other websites.</p>
+      <p class="tiny muted">Username-only accounts do not have email-based password recovery. Keep your password safe.</p>
     </div>
   </section>
 
