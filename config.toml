@@ -1,0 +1,4 @@
+project_id = "kjuqqrndkgbfhuomracy"
+
+[functions.ai-study-manager]
+verify_jwt = true
