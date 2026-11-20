@@ -1,3 +1,6 @@
+(function(){
+  if (window.__STUDYHUB_APP_LOADED__) return;
+  window.__STUDYHUB_APP_LOADED__ = true;
 /* StudyHub v2 — Supabase-backed student planner. Gemini calls run only in the Edge Function. */
 const cfg=window.STUDYHUB_CONFIG||{};
 const supabase=window.supabase?.createClient(cfg.supabaseUrl,cfg.supabaseAnonKey);
@@ -108,3 +111,5 @@ async function addError(){const text=$('#errorText')?.value.trim();if(!text)retu
 async function deleteError(i){state.errors.splice(i,1);await saveState();render()}
 window.deleteError=deleteError;window.setTab=setTab;window.toggleTask=toggleTask;window.startSlot=startSlot;window.answerRequest=answerRequest;window.removeSubject=removeSubject;window.copyFriendCode=copyFriendCode;
 boot();
+
+})();
