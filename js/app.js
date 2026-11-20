@@ -55,6 +55,17 @@ async function boot(){
   const {data,error}=await supabase.auth.getSession();
   if(error){console.error(error);showAuth('Could not verify your session. Please refresh and sign in again.');return}
   await handleSession(data?.session||null);
+
+  if (error) {
+    console.error("FUNCTION ERROR:", error);
+  
+    if (error.context) {
+      const details = await error.context.clone().text();
+      console.error("ACTUAL SERVER RESPONSE:", details);
+    }
+  
+    throw error;
+  }
 }
 let authMode='login';
 function setAuthMode(mode){authMode=mode;const signup=mode==='signup';$('#authSubmit').textContent=signup?'Create account':'Sign in';$('#authModeText').textContent=signup?'Already have an account?':'New to StudyHub?';$('#authModeToggle').textContent=signup?'Sign in':'Create an account';$('#confirmPasswordLabel').classList.toggle('hidden',!signup);$('#confirmPassword').classList.toggle('hidden',!signup);$('#confirmPassword').required=signup;$('#authPassword').autocomplete=signup?'new-password':'current-password';$('#authMessage').textContent=signup?'Choose a username you will remember.':'Use your StudyHub username and password.'}
