@@ -1,7 +1,7 @@
 (() => {
   const ACTIVE_USER_KEY = 'studyhub_active_timer_user_v1';
   const COMMAND_KEY = 'studyhub_timer_command_v1';
-  const $ = id => document.getElementById(id);
+  const $ = id => document.getElementById(id); 
   let userId = null;
   let timer = null;
   let lastCommandId = null;
