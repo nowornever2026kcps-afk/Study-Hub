@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10172b">
+  <title>StudyHub Floating Timer</title>
+  <link rel="stylesheet" href="css/floating-timer.css">
+  <script defer src="js/floating-timer.js"></script>
+</head>
+<body>
+  <main class="widget" aria-label="StudyHub floating timer">
+    <header class="titlebar">
+      <div class="brand"><span class="brand-mark">S</span><span>STUDYHUB <small>FOCUS TIMER</small></span></div>
+      <div class="window-actions">
+        <button id="pinButton" class="icon-button active" title="Toggle always on top" aria-label="Toggle always on top">⌖</button>
+        <button id="minimizeButton" class="icon-button" title="Minimize" aria-label="Minimize">—</button>
+        <button id="closeButton" class="icon-button close" title="Hide timer" aria-label="Hide timer">×</button>
+      </div>
+    </header>
+    <section class="timer-content">
+      <div class="meta-row"><span id="modeBadge" class="mode-badge">FOCUS</span><span id="statusText" class="status">Ready</span></div>
+      <div id="clock" class="clock">25:00</div>
+      <div id="task" class="task">Sign in to StudyHub to load your timer</div>
+      <div class="subject-line"><span>SUBJECT</span><b id="subject">—</b></div>
+      <div class="progress"><i id="progressFill"></i></div>
+      <div class="controls">
+        <button id="toggleButton" class="primary" disabled>Start</button>
+        <button id="breakButton" disabled>Break</button>
+        <button id="resetButton" disabled>Reset</button>
+      </div>
+      <footer><button id="openAppButton" class="link-button">Open StudyHub</button><span id="syncLabel">Waiting for StudyHub…</span></footer>
+    </section>
+  </main>
+</body>
+</html>
